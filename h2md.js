@@ -23,10 +23,30 @@ var tokens = tokenizer.parseCode(text);
 
 var g = new generator.Generator();
 
+var className = "";
+
 // detect new class
 g.addCodePattern(/^class/, (t) => {
-    //g.level = 1;
-    t.header = t.code.substr(6);
+    className = t.code.substr(6);
+    t.header = className;
+});
+
+g.addCodePattern(/\(/, (t) => {
+    if (t.code.contains(className)) {
+        t.header = "🎇 " + t.code;
+        return;
+    }
+    console.log("Method");
+    t.header = "Ⓜ️ " + t.code;
+});
+
+g.addCodePattern(/^typedef/, (t) => {
+    console.log("Typedef");
+});
+
+g.addCodePattern(/^[^\(]*$/, (t) => {
+    console.log("Property");
+    t.header = "🔧 " + t.code;
 });
 
 g.generate(tokens);
@@ -39,5 +59,5 @@ if (args.o) {
     console.log(md);
 }
 
-console.log(tokens);
+//console.log(tokens);
 

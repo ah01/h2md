@@ -87,8 +87,16 @@ public:
      */
     void restart(time_ms interval);
 
+    /**
+     * ## Attributes
+     */
+
+    /**
+     * Timers interval (in miliseconds)
+     */
+    time_ms interval;
+
 private:
-    unsigned long interval;
     unsigned long last;
 };
 
