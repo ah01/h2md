@@ -41,7 +41,7 @@ Type of time in miliseconds
 
 ## Constructors
 
-### 🎇 Timer(time_ms interval, bool autostop = false)
+### 💡 Timer(time_ms interval, bool autostop = false)
 
 ```cpp
 Timer(time_ms interval, bool autostop = false)
