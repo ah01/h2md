@@ -5,15 +5,21 @@ const tokenizer = require("./lib/tokenizer.js");
 const generator = require("./lib/generator.js");
 
 const args = minimist(process.argv.slice(2), {
-    boolean: ["h"],
+    boolean: ["help"],
     alias: {
+        "h": "help",
+        "p": "pattern",
+        "o": "output"
     }
 });
 
-console.log(args);
+if (args.help) {
+    console.log(fs.readFileSync(__dirname + "/help.txt").toString().trim());
+    return;
+}
 
 if (args._.length != 1) {
-    console.log("No file.");
+    console.error("No file.");
     return;
 }
 
@@ -23,31 +29,11 @@ var tokens = tokenizer.parseCode(text);
 
 var g = new generator.Generator();
 
-var className = "";
+if (args.pattern === undefined) {
+    args.pattern = "cpp"; // default pattern
+}
 
-// detect new class
-g.addCodePattern(/^class/, (t) => {
-    className = t.code.substr(6);
-    t.header = className;
-});
-
-g.addCodePattern(/\(/, (t) => {
-    if (t.code.contains(className)) {
-        t.header = "🎇 " + t.code;
-        return;
-    }
-    console.log("Method");
-    t.header = "Ⓜ️ " + t.code;
-});
-
-g.addCodePattern(/^typedef/, (t) => {
-    console.log("Typedef");
-});
-
-g.addCodePattern(/^[^\(]*$/, (t) => {
-    console.log("Property");
-    t.header = "🔧 " + t.code;
-});
+require(`./lib/patterns/${args.pattern}.js`).applyToGenerator(g);
 
 g.generate(tokens);
 
