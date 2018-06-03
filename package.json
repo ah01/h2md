@@ -1,15 +1,15 @@
 {
-  "name": "h2md",
-  "version": "1.0.0",
-  "description": "",
-  "main": "h2md.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "minimist": "^1.2.0",
-    "string": "^3.3.3"
-  }
+    "name": "h2md",
+    "version": "0.0.1",
+    "description": "CPP Header file to Markdown converter",
+    "main": "h2md.js",
+    "author": {
+        "name": "Adam Horcica",
+        "email": "adam@horcica.cz"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "minimist": "^1.2.0",
+        "string": "^3.3.3"
+    }
 }
