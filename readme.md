@@ -18,7 +18,7 @@ There are more [examples…](https://github.com/ah01/h2md/tree/master/examples)
 
 ## Usage
 
-Get application with all dependencies
+Get application. Requires *node.js* and *npm* to be installed on computer.
 
 ```bash
 git clone https://github.com/ah01/h2md.git
@@ -37,10 +37,8 @@ node h2md -p cpp -o documentation.md library.h
 h2md works in 3 steps:
 
 1. Take all block comment (beginning with `/**`) from file and take also one following line of code after block.
-2. Apply list of patterns to block according to that one line of code (if not empty).
+2. Apply patterns to block according to that one line of code (if not empty). Patterns are in [libs](https://github.com/ah01/h2md/tree/master/lib/patterns).
 3. Go block by block and
     - If code line is empty, just put content of block to output file.
     - If code line is not empty, make md header from it and then put content of block.
-
-See example header file **[timer.h](https://github.com/ah01/h2md/blob/master/examples/timer.h)** and corresponding  generated morkdown **[timer.md](https://github.com/ah01/h2md/blob/master/examples/timer.md)**.
 
