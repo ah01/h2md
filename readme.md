@@ -1,14 +1,36 @@
 # Header to Markdown (*h2md*)
 
-Small utility for generating markdown file from block comments in C/C++ source code. In general, it will work for any language that use C style block comment.
+Small utility for generating markdown file from block comments in C/C++ source code. 
 
 ```
-    my_super_library.h --> (m2md) --> documentation_for_my_super_library.md
+library.h  →  [m2md]  →  documentation.md
 ```
 
 Basic idea is that you have markdown text in block comment of your code and you want to take them and put them in to separate file.
 
-*This tool is far away from doxygen or other proper documentation generators. I want small tool for documenting trivial Arduino library. I realize that I unintentionally already writing markdown into comments in header file. So, I need to just take them out...*
+*This tool is far away from doxygen or other proper documentation generators. I want small tool for documenting trivial Arduino library. I realize that I unintentionally already writing markdown into comments in header file. So, I need to just take them out…*
+
+## Examples
+
+See example header file **[timer.h](https://github.com/ah01/h2md/blob/master/examples/timer.h)** and corresponding  generated markdown **[timer.md](https://github.com/ah01/h2md/blob/master/examples/timer.md)**.
+
+There are more [examples…](https://github.com/ah01/h2md/tree/master/examples)
+
+## Usage
+
+Get application with all dependencies
+
+```bash
+git clone https://github.com/ah01/h2md.git
+cd h2md
+npm install
+```
+
+Run it
+
+```bash
+node h2md -p cpp -o documentation.md library.h
+```
 
 ## Theory of operation
 

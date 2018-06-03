@@ -1,0 +1,1 @@
+h2md [-h] [-o <output-file>] [-p <pattern>] <header-file>
