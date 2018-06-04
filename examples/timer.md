@@ -1,3 +1,4 @@
+> This document was generated from file `timer.h` at 2018-6-4 21:55:49
 # Timer
 
 ```cpp

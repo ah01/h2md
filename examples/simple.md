@@ -1,3 +1,4 @@
+> This document was generated from file `simple.h` at 2018-6-4 21:55:48
 # Calculator functions
 
 This is simple c header file for fictive calculator

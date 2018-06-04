@@ -1,16 +1,18 @@
 const fs = require("fs");
+const path = require("path");
 const minimist = require('minimist');
 
 const tokenizer = require("./lib/tokenizer.js");
 const generator = require("./lib/generator.js");
 
 const args = minimist(process.argv.slice(2), {
-    boolean: ["help", "line"],
+    boolean: ["help", "line", "file"],
     alias: {
         "h": "help",
         "p": "pattern",
         "o": "output",
-        "l": "line"
+        "l": "line",
+        "f": "file"
     }
 });
 
@@ -29,7 +31,9 @@ var text = fs.readFileSync(args._[0]).toString();
 var tokens = tokenizer.parseCode(text);
 
 var g = new generator.Generator({
-    addLineNumber: args.line
+    addLineNumber: args.line,
+    addFileHeader: args.file,
+    file: path.basename(args._[0])
 });
 
 if (args.pattern === undefined) {
