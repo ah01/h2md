@@ -1,4 +1,5 @@
-> This document was generated from file `timer.h` at 2018-6-4 21:55:49
+> This document was generated from file `timer.h` at 2018-6-4 22:04:29
+<a name="line-4"></a>
 # Timer
 
 ```cpp
@@ -30,8 +31,10 @@ void loop() {
 ```
 
 
+<a name="line-34"></a>
 ## Type definition
 
+<a name="line-38"></a>
 ### typedef unsigned long time_ms
 
 ```cpp
@@ -40,8 +43,10 @@ typedef unsigned long time_ms /* line 41 */
 
 Type of time in miliseconds
 
+<a name="line-43"></a>
 ## Constructors
 
+<a name="line-47"></a>
 ### 💡 Timer(time_ms interval, bool autostop = false)
 
 ```cpp
@@ -60,8 +65,10 @@ Create new timer instance with defined interval
 Timer mytimer(5000); // New timer for 5 sec.
 ```
 
+<a name="line-62"></a>
 ## Methods
 
+<a name="line-66"></a>
 ### Ⓜ️ bool elapsed()
 
 ```cpp
@@ -75,6 +82,7 @@ Check if set interval elapsed
 Return `true` if interval epalsed othervise `false`
 
 
+<a name="line-76"></a>
 ### Ⓜ️ void restart()
 
 ```cpp
@@ -83,6 +91,7 @@ void restart() /* line 79 */
 
 Restart timer form begining
 
+<a name="line-81"></a>
 ### Ⓜ️ void restart(time_ms interval)
 
 ```cpp
@@ -95,8 +104,10 @@ Restart timer form begining and change interval
 
 - `interval` - interval time (in miliseconds)
 
+<a name="line-90"></a>
 ## Attributes
 
+<a name="line-94"></a>
 ### 🔧 time_ms interval
 
 ```cpp

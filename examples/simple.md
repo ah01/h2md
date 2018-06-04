@@ -1,10 +1,13 @@
-> This document was generated from file `simple.h` at 2018-6-4 21:55:48
+> This document was generated from file `simple.h` at 2018-6-4 22:04:29
+<a name="line-3"></a>
 # Calculator functions
 
 This is simple c header file for fictive calculator
 
+<a name="line-9"></a>
 ## Functions
 
+<a name="line-13"></a>
 ### 🔹 int add(int a, int b)
 
 ```cpp
@@ -22,6 +25,7 @@ Add two numbers together
 
 Return addition of number `a` and `b`
 
+<a name="line-27"></a>
 ### 🔹 int sub(int a, int b)
 
 ```cpp
@@ -39,8 +43,10 @@ Substract two numbers
 
 Return subtraction of number `a` and `b`
 
+<a name="line-41"></a>
 ## Global variables
 
+<a name="line-45"></a>
 ### 🔧 extern int ans
 
 ```cpp
