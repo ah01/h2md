@@ -10,7 +10,7 @@
  * ## Functions
  */
 
-/**
+/** (add)
  * Add two numbers together
  * 
  * # Parameters
@@ -24,7 +24,7 @@
  */
 int add(int a, int b);
 
-/**
+/** (sub)
  * Substract two numbers
  * 
  * # Parameters
@@ -43,6 +43,6 @@ int sub(int a, int b);
  */
 
 /**
- * Global variable contains last success result
+ * Global variable that contains last successful result of [add](#add) or [sub](#sub) functions.
  */
 extern int ans;
