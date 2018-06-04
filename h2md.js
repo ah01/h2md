@@ -5,11 +5,12 @@ const tokenizer = require("./lib/tokenizer.js");
 const generator = require("./lib/generator.js");
 
 const args = minimist(process.argv.slice(2), {
-    boolean: ["help"],
+    boolean: ["help", "line"],
     alias: {
         "h": "help",
         "p": "pattern",
-        "o": "output"
+        "o": "output",
+        "l": "line"
     }
 });
 
@@ -27,7 +28,9 @@ var text = fs.readFileSync(args._[0]).toString();
 
 var tokens = tokenizer.parseCode(text);
 
-var g = new generator.Generator();
+var g = new generator.Generator({
+    addLineNumber: args.line
+});
 
 if (args.pattern === undefined) {
     args.pattern = "cpp"; // default pattern

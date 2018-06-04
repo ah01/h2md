@@ -4,10 +4,10 @@ This is simple c header file for fictive calculator
 
 ## Functions
 
-### 💡 int add(int a, int b)
+### 🔹 int add(int a, int b)
 
 ```cpp
-int add(int a, int b)
+int add(int a, int b) /* line 25 */
 ```
 
 Add two numbers together
@@ -21,10 +21,10 @@ Add two numbers together
 
 Return addition of number `a` and `b`
 
-### 💡 int sub(int a, int b)
+### 🔹 int sub(int a, int b)
 
 ```cpp
-int sub(int a, int b)
+int sub(int a, int b) /* line 39 */
 ```
 
 Substract two numbers
@@ -43,7 +43,7 @@ Return subtraction of number `a` and `b`
 ### 🔧 extern int ans
 
 ```cpp
-extern int ans
+extern int ans /* line 48 */
 ```
 
 Global variable contains last success result
